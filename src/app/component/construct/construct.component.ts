@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {BackendService} from '../../service/backend.service';
-import {UserService} from '../../service/user.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-construct',
@@ -9,8 +8,8 @@ import {UserService} from '../../service/user.service';
 })
 export class ConstructComponent implements OnInit {
 
-  constructor(private backendService: BackendService,
-              private userService: UserService) {
+  @Input() user: User;
+  constructor() {
     console.log('On constructor construct component');
   }
 
