@@ -18,7 +18,9 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     console.log('On init main component');
-    this.user = this.backendService.getUser();
+    this.userService.initUser().subscribe(res => {
+      this.user = Object.assign({}, res);
+      console.log('On finish loading');
+    });
   }
-
 }
